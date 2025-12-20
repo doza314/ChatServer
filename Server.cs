@@ -37,6 +37,13 @@ class Server
     var listener = new TcpListener(IPAddress.Any, 5555);
     listener.Start();
     Console.WriteLine("[HOST] Listening on port 5555...");
+    string? q = "";
+    q = Console.ReadLine();
+
+    if (q == "/q")
+    {
+      return;
+    }
     
     //client handling loop
     while (true)

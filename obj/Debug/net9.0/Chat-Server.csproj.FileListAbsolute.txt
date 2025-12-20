@@ -1,0 +1,15 @@
+/Users/ryan/Projects/Chat-Server/bin/Debug/net9.0/Chat-Server
+/Users/ryan/Projects/Chat-Server/bin/Debug/net9.0/Chat-Server.deps.json
+/Users/ryan/Projects/Chat-Server/bin/Debug/net9.0/Chat-Server.runtimeconfig.json
+/Users/ryan/Projects/Chat-Server/bin/Debug/net9.0/Chat-Server.dll
+/Users/ryan/Projects/Chat-Server/bin/Debug/net9.0/Chat-Server.pdb
+/Users/ryan/Projects/Chat-Server/obj/Debug/net9.0/Chat-Server.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ryan/Projects/Chat-Server/obj/Debug/net9.0/Chat-Server.AssemblyInfoInputs.cache
+/Users/ryan/Projects/Chat-Server/obj/Debug/net9.0/Chat-Server.AssemblyInfo.cs
+/Users/ryan/Projects/Chat-Server/obj/Debug/net9.0/Chat-Server.csproj.CoreCompileInputs.cache
+/Users/ryan/Projects/Chat-Server/obj/Debug/net9.0/Chat-Server.sourcelink.json
+/Users/ryan/Projects/Chat-Server/obj/Debug/net9.0/Chat-Server.dll
+/Users/ryan/Projects/Chat-Server/obj/Debug/net9.0/refint/Chat-Server.dll
+/Users/ryan/Projects/Chat-Server/obj/Debug/net9.0/Chat-Server.pdb
+/Users/ryan/Projects/Chat-Server/obj/Debug/net9.0/Chat-Server.genruntimeconfig.cache
+/Users/ryan/Projects/Chat-Server/obj/Debug/net9.0/ref/Chat-Server.dll

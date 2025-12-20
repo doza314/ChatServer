@@ -17,6 +17,14 @@ class Chatter
     //TCP Handshake
     using TcpClient client = new TcpClient();
     Console.WriteLine("[CLIENT] Connecting...");
+    string? q = "";
+    q = Console.ReadLine();
+    
+    if (q == "/q")
+    {
+      return;
+    }
+
     client.Connect("doza314.onthewifi.com", 5555);
     Console.WriteLine("[CLIENT] Connected!");
       
