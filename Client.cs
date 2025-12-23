@@ -25,13 +25,14 @@ class Chatter
     {
       string? incoming = reader.ReadLine();
       Console.WriteLine($"\n message is {incoming}");
-      if (incoming == null) {return;}
+      if (incoming != null)
+      {
+        ClearCurrentLine();
+        Console.WriteLine(incoming);
+        Console.WriteLine();
+        Console.Write($"{name}: ");
 
-      ClearCurrentLine();
-      Console.WriteLine(incoming);
-      Console.WriteLine();
-      Console.Write($"{name}: ");
-
+      } 
     }
   }
 
