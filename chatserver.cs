@@ -3,7 +3,7 @@ bool quit = false;
 
 Console.Clear();
 Console.Write("Create username: ");
-username = Console.ReadLine();
+username = Console.ReadLine() + ": ";
 Console.WriteLine();
 
 if (username == "" || username == " " || username == null)

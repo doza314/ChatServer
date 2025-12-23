@@ -7,7 +7,7 @@ class Server
 {
   private readonly ConcurrentDictionary<TcpClient, StreamWriter> _clients = new();
 
-  public void Broadcast(string msg) //for broadcasting messages between all parallel client handling processes
+  void Broadcast(string msg) //for broadcasting messages between all parallel client handling processes
   {
     foreach(var kvp in _clients)
     {
@@ -19,7 +19,7 @@ class Server
   }
   
 
-  public void HandleClient(TcpClient client)
+  void HandleClient(TcpClient client)
   {
     try
     {

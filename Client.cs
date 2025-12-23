@@ -5,11 +5,19 @@ class Chatter
 {
   private string? message = "";
   private string? name = "";
-  private string? incoming = "";
 
   public Chatter(string username)
   {
     name = username;
+  }
+
+  void ReceiveLoop(StreamReader reader)
+  {
+    while(true)
+    {
+      string? incoming = reader.ReadLine();
+      Console.Write(incoming);
+    }
   }
 
   public void Run()
@@ -20,7 +28,7 @@ class Chatter
     
     client.Connect("doza314.tailef3c92.ts.net", 5555);
     Console.WriteLine("[CLIENT] Connected!");
-      
+    
     //Stream
     using NetworkStream stream = client.GetStream();
     using var reader = new StreamReader(stream, Encoding.UTF8);
@@ -28,9 +36,10 @@ class Chatter
 
     while(true)
     {
-             
+      Task.Run(() => ReceiveLoop(reader)); 
+
       //message prompt
-      Console.Write(name + ": ");
+      Console.Write(name);
       message = Console.ReadLine();
 
       //check for null or quit command
@@ -47,10 +56,6 @@ class Chatter
       string msg = name + message;
       writer.WriteLine(msg);
 
-      //print incoming messagd
-      incoming = reader.ReadLine(); 
-      Console.WriteLine("\n" + incoming);
-
     }
    }
-  }
+}
