@@ -24,7 +24,7 @@ class Chatter
     while(true)
     {
       string? incoming = reader.ReadLine();
-
+      Console.WriteLine($"\n message is {incoming}");
       if (incoming == null) {return;}
 
       ClearCurrentLine();
