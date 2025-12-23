@@ -1,10 +1,25 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Collections.Concurrent;
 
 class Server
 {
-  void HandleClient(TcpClient client)
+  private readonly ConcurrentDictionary<TcpClient, StreamWriter> _clients = new();
+
+  public void Broadcast(string msg) //for broadcasting messages between all parallel client handling processes
+  {
+    foreach(var kvp in _clients)
+    {
+      var client = kvp.Key;
+      var writer = kvp.Value;
+
+      writer.WriteLine(msg);
+    } 
+  }
+  
+
+  public void HandleClient(TcpClient client)
   {
     try
     {
@@ -19,7 +34,7 @@ class Server
              {
               string? msg = reader.ReadLine();
               if (msg == null) {break;}
-              writer.WriteLine(msg);  
+              Broadcast(msg); 
              }
           }
         }
@@ -44,6 +59,7 @@ class Server
     {
       TcpClient client = listener.AcceptTcpClient();
       Console.WriteLine("[HOST] Client connected.");
+
       Task.Run(() => HandleClient(client));     
     }
   }    
