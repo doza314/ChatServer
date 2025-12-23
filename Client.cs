@@ -23,7 +23,6 @@ class Chatter
         Console.WriteLine();
         Console.WriteLine(incoming);
         Console.WriteLine();
-        Console.Write($"{name}: ");
       } 
     }
   }
@@ -45,14 +44,8 @@ class Chatter
     Task.Run(() => ReceiveLoop(reader)); 
 
     while(true)
-    {
-      if (first == false)
-      {
-        //message prompt
-        Console.Write($"{name}: ");
-        first = true;
-      }
-      
+    {  
+      Console.Write(">> ");
       message = Console.ReadLine();
       Console.WriteLine();
 
