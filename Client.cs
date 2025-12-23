@@ -25,7 +25,6 @@ class Chatter
     {
       string? incoming = reader.ReadLine();
       ClearCurrentLine();
-      Console.WriteLine();
       Console.WriteLine(incoming);
       Console.WriteLine();
       Console.Write(name);

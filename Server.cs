@@ -35,7 +35,6 @@ class Server
              while (true)
              {
               string? msg = reader.ReadLine();
-              if (msg == null) {break;}
               Broadcast(msg); 
              }
           }
