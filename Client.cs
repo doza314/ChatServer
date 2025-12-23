@@ -11,20 +11,11 @@ class Chatter
     name = username;
   }
 
-  void ClearCurrentLine()
-  {
-    int currentLine = Console.CursorTop;
-    Console.SetCursorPosition(0, currentLine);
-    Console.Write(new string(' ', Console.WindowWidth));
-    Console.SetCursorPosition(0, currentLine);
-  }
-
   void ReceiveLoop(StreamReader reader)
   {
     while(true)
     {
       string? incoming = reader.ReadLine();
-      Console.WriteLine($"\n message is {incoming}");
 
       if (incoming != null)
       {
