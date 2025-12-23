@@ -25,6 +25,8 @@ class Chatter
     {
       string? incoming = reader.ReadLine();
       
+      if (incoming == null) {return;}
+
       if (incoming == name + message)
       {
         continue;

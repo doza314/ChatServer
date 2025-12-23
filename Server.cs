@@ -7,13 +7,15 @@ class Server
 {
   private readonly ConcurrentDictionary<TcpClient, StreamWriter> _clients = new();
   
-  void Broadcast(string msg) //for broadcasting messages between all parallel client handling processes
+  void Broadcast(string msg, TcpClient? except = null) //for broadcasting messages between all parallel client handling processes
   {
     foreach(var kvp in _clients)
     {
       var client = kvp.Key;
       var writer = kvp.Value;
 
+      if (except != null && kvp.Key == except) continue;
+      
       writer.WriteLine(msg);
     } 
   }
@@ -36,7 +38,7 @@ class Server
              {
               string? msg = reader.ReadLine();
               if (msg == null) {break;}
-              Broadcast(msg); 
+              Broadcast(msg, except: client); 
              }
           }
         }
