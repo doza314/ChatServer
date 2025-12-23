@@ -5,6 +5,7 @@ class Chatter
 {
   private string? message = "";
   private string? name = "";
+  bool turn = false;
 
   public Chatter(string username)
   {
@@ -18,12 +19,13 @@ class Chatter
       string? incoming = reader.ReadLine();
 
       if (incoming != null)
-      {
+      { 
         Console.WriteLine();
         Console.WriteLine(incoming);
         Console.WriteLine();
         Console.Write($"{name}: ");
-
+        
+        turn = false;
       } 
     }
   }
@@ -46,11 +48,17 @@ class Chatter
 
     while(true)
     {
-      //message prompt
-      Console.Write($"{name}: ");
-      message = Console.ReadLine();
-      Console.WriteLine();
+      if (turn == false)
+      {
+        //message prompt
+        Console.Write($"{name}: ");
+        message = Console.ReadLine();
+        Console.WriteLine();
 
+        turn = true;
+
+      }
+      
       //check for null or quit command
       if (message == null)
       {
