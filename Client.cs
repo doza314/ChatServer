@@ -19,6 +19,7 @@ class Chatter
 
       if (incoming != null)
       {
+        Console.WriteLine();
         Console.WriteLine(incoming);
         Console.WriteLine();
         Console.Write($"{name}: ");
