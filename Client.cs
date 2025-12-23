@@ -44,11 +44,11 @@ class Chatter
     using NetworkStream stream = client.GetStream();
     using var reader = new StreamReader(stream, Encoding.UTF8);
     using var writer = new StreamWriter(stream, Encoding.UTF8) { AutoFlush = true };  
+    
+    Task.Run(() => ReceiveLoop(reader)); 
 
     while(true)
     {
-      Task.Run(() => ReceiveLoop(reader)); 
-
       //message prompt
       Console.Write(name);
       message = Console.ReadLine();
