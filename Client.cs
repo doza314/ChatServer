@@ -23,10 +23,10 @@ class Chatter
   {
     while(true)
     {
-      Console.WriteLine("Word read before"); 
+      Console.WriteLine("\n Word read before"); 
 
       string? incoming = reader.ReadLine();
-      Console.WriteLine("Word read after"); 
+      Console.WriteLine($"Word read after. The word is {incoming}"); 
       if (incoming == null) {return;}
 
       ClearCurrentLine();
