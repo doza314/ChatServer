@@ -24,8 +24,6 @@ class Chatter
         Console.WriteLine(incoming);
         Console.WriteLine();
         Console.Write($"{name}: ");
-        
-        first = false;
       } 
     }
   }
