@@ -15,17 +15,10 @@ class Chatter
   public void Run()
   { 
     //TCP Handshake
-    using TcpClient client = new TcpClient();
     Console.WriteLine("[CLIENT] Connecting...");
-    string? q = "";
-    q = Console.ReadLine();
+    using TcpClient client = new TcpClient();
     
-    if (q == "/q")
-    {
-      return;
-    }
-
-    client.Connect("doza314.onthewifi.com", 5555);
+    client.Connect("doza314.tailef3c92.ts.net", 5555);
     Console.WriteLine("[CLIENT] Connected!");
       
     //Stream
@@ -35,10 +28,7 @@ class Chatter
 
     while(true)
     {
-      //print incoming messagd
-      incoming = reader.ReadLine(); 
-      Console.WriteLine("\n" + incoming);
-       
+             
       //message prompt
       Console.Write(name + ": ");
       message = Console.ReadLine();
@@ -56,6 +46,11 @@ class Chatter
       //build and send message
       string msg = name + message;
       writer.WriteLine(msg);
+
+      //print incoming messagd
+      incoming = reader.ReadLine(); 
+      Console.WriteLine("\n" + incoming);
+
     }
    }
   }
