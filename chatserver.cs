@@ -24,7 +24,6 @@ if (username == "server" && !quit)
 }
 else if (username != null && username != "server" && !quit)
 {
-  username = username + ": ";
   Chatter chatter = new Chatter(username);
   chatter.Run();
 }

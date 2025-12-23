@@ -27,17 +27,10 @@ class Chatter
       
       if (incoming == null) {return;}
 
-      if (incoming == name + message)
-      {
-        continue;
-      }
-      else
-      {
-        ClearCurrentLine();
-        Console.WriteLine(incoming);
-        Console.WriteLine();
-        Console.Write(name);
-      }
+      ClearCurrentLine();
+      Console.WriteLine(incoming);
+      Console.WriteLine();
+      Console.Write(name);
 
     }
   }
@@ -76,7 +69,7 @@ class Chatter
       }
       
       //build and send message
-      string msg = name + message;
+      string msg = $"{name}: {message}";
       writer.WriteLine(msg);
 
     }
