@@ -34,7 +34,7 @@ class Chatter
     Console.WriteLine("[CLIENT] Connecting...");
     using TcpClient client = new TcpClient();
     
-    client.Connect("74.215.35.195", 5555);
+    client.Connect("192.168.200.196", 5555);
     Console.WriteLine("[CLIENT] Connected!");
     
     //Stream
