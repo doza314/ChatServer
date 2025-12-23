@@ -23,21 +23,15 @@ class Chatter
   {
     while(true)
     {
-      Console.WriteLine("\n Word read before  The word is {incoming}"); 
-
       string? incoming = reader.ReadLine();
-
-      Console.WriteLine($"Word read after. The word is {incoming}"); 
 
       if (incoming == null) {return;}
 
-            Console.WriteLine("Before ClearCurrentLine");
-            ClearCurrentLine();
-            Console.WriteLine("After ClearCurrentLine");
+      ClearCurrentLine();
+      Console.WriteLine(incoming);
+      Console.WriteLine();
+      Console.Write($"{name}: ");
 
-            Console.WriteLine(incoming);
-            Console.WriteLine();
-            Console.Write($"{name}: ");
     }
   }
 
@@ -60,7 +54,7 @@ class Chatter
     while(true)
     {
       //message prompt
-      Console.Write(name);
+      Console.Write($"{name}: ");
       message = Console.ReadLine();
       Console.WriteLine();
 
