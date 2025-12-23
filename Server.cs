@@ -6,7 +6,15 @@ using System.Collections.Concurrent;
 class Server
 {
   private readonly ConcurrentDictionary<TcpClient, StreamWriter> _clients = new();
-
+  
+  void ClearCurrentLine()
+  {
+    int currentLine = Console.CursorTop;
+    Console.SetCursorPosition(0, currentLine);
+    Console.Write(new string(' ', Console.WindowWidth));
+    Console.SetCursorPosition(0, currentLine);
+  }
+  
   void Broadcast(string msg) //for broadcasting messages between all parallel client handling processes
   {
     foreach(var kvp in _clients)
@@ -36,6 +44,7 @@ class Server
              {
               string? msg = reader.ReadLine();
               if (msg == null) {break;}
+              ClearCurrentLine();
               Broadcast(msg); 
              }
           }
