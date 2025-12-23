@@ -5,7 +5,7 @@ class Chatter
 {
   private string? message = "";
   private string? name = "";
-  bool turn = false;
+  bool first = false;
 
   public Chatter(string username)
   {
@@ -25,7 +25,7 @@ class Chatter
         Console.WriteLine();
         Console.Write($"{name}: ");
         
-        turn = false;
+        first = false;
       } 
     }
   }
@@ -48,17 +48,18 @@ class Chatter
 
     while(true)
     {
-      if (turn == false)
+      if (first == false)
       {
         //message prompt
         Console.Write($"{name}: ");
-        message = Console.ReadLine();
-        Console.WriteLine();
-
-        turn = true;
-
+        first = true;
       }
       
+      message = Console.ReadLine();
+      Console.WriteLine();
+
+
+
       //check for null or quit command
       if (message == null)
       {
