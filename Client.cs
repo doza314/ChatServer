@@ -34,12 +34,12 @@ class Chatter
     Console.WriteLine("[CLIENT] Connecting...");
     using TcpClient client = new TcpClient();
     
-    client.Connect("doza314.tailef3c92.ts.net", 5555);
+    client.Connect("[2600:2b00:801f:b700:da3a:ddff:fe89:103c]", 5555);
     Console.WriteLine("[CLIENT] Connected!");
     
     //Stream
     using NetworkStream stream = client.GetStream();
-    using var reader = new StreamReader(stream, Encoding.UTF8);
+    using var reader = new StreamReader(stream, Encoding.UTF8); 
     using var writer = new StreamWriter(stream, Encoding.UTF8) { AutoFlush = true };  
     
     Task.Run(() => ReceiveLoop(reader)); 

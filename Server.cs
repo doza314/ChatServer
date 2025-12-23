@@ -54,7 +54,7 @@ class Server
   {
     //listen for client
     Console.WriteLine("[HOST] Listening on port 5555...");
-    var listener = new TcpListener(IPAddress.Any, 5555);
+    var listener = new TcpListener(IPAddress.IPv6Any, 5555);
     listener.Start();
     
     
