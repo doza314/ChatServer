@@ -25,6 +25,7 @@ class Chatter
     {
       string? incoming = reader.ReadLine();
       ClearCurrentLine();
+      Console.WriteLine();
       Console.WriteLine(incoming);
       Console.WriteLine();
       Console.Write(name);
@@ -52,6 +53,7 @@ class Chatter
       //message prompt
       Console.Write(name);
       message = Console.ReadLine();
+      Console.WriteLine();
 
       //check for null or quit command
       if (message == null)
