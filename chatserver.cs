@@ -3,7 +3,7 @@ bool quit = false;
 
 Console.Clear();
 Console.Write("Create username: ");
-username = Console.ReadLine() + ": ";
+username = Console.ReadLine();
 Console.WriteLine();
 
 if (username == "" || username == " " || username == null)
@@ -24,6 +24,7 @@ if (username == "server" && !quit)
 }
 else if (username != null && username != "server" && !quit)
 {
+  username = username + ": ";
   Chatter chatter = new Chatter(username);
   chatter.Run();
 }
