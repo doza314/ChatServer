@@ -24,10 +24,19 @@ class Chatter
     while(true)
     {
       string? incoming = reader.ReadLine();
-      ClearCurrentLine();
-      Console.WriteLine(incoming);
-      Console.WriteLine();
-      Console.Write(name);
+      
+      if (incoming == name + message)
+      {
+        continue;
+      }
+      else
+      {
+        ClearCurrentLine();
+        Console.WriteLine(incoming);
+        Console.WriteLine();
+        Console.Write(name);
+      }
+
     }
   }
 
