@@ -55,7 +55,7 @@ class Chatter
       
       message = Console.ReadLine();
       Console.WriteLine();
-
+      Console.Write($"{name}: ");
 
 
       //check for null or quit command
