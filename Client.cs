@@ -23,6 +23,7 @@ class Chatter
         Console.WriteLine();
         Console.WriteLine(incoming);
         Console.WriteLine();
+        Console.Write(">> ");
       } 
     }
   }
